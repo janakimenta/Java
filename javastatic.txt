@@ -1,0 +1,50 @@
+Static:
+
+Static member is a menber of class which is not associated to any instance of the class but to the class iteself.
+We can use static member without creating the instance of class, we can call it by class name.
+Static keyword is used to create class level variable.
+
+Java Static Variable:
+Its a class variable, doesn't belong to the instance/object of that class. belongs to class itself.
+These are shared among all the instances of that class so its not Thread Safe.
+Access: ClassName.variableName(if its public)
+We always use final with static variable for constants.
+
+Java Static method:
+Static Method : can access only static variables of the class or invoke only static methods.
+The main() method which is an entry point for java program is static.
+
+Java Static block:
+We can make group of statements static(block).
+these gets executed as soon as class gets loaded.
+Canoot access non-static variables in static block.
+Mainly used for initializing static vriables.
+Can have multiple static blocks in a single class.
+Static block is executed only once when class is loaded.
+
+
+
+Java Static Class(Nested Classes)
+Only inner classes can be made static not the top most class...
+
+
+Java Static Import
+
+from java 1.5 we can import static members to avoid using class reference in the imported class...
+We have to use import static XXXXX.XXX
+
+Note: Static keyword cannot be used for Top Level Classes only inner classes(Nested Classes).
+
+------------------------------------------------------------
+
+Why public static void main in java
+
+Basically this is the line from where java execution starts from.
+Public is access specifier--> which will make this method accessable from outside the class too...
+static because this method has to be called without creating the instance of the class.
+So without static keyword on main method,your program will compile but not execute. Run time error.
+void simply says main method will not return any value.
+Java compiler will compile all classes which do not have main method and java interpreter starts running the application from main method.
+if no main method if found run time error saying no main method found.
+
+--------------------------------------------------------------
