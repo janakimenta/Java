@@ -1,0 +1,17 @@
+Example for NetSuite
+
+WSDL FILE : https://webservices.netsuite.com/wsdl/v2017_1_0/netsuite.wsdl
+
+Steps:
+
+1)downloaded axis-1.4
+http://ws.apache.org/axis/.
+
+2) Created gen.bat file and put below cmd in the file and ran it from cmd prompt(example go to that folder and run gen.bat):
+
+
+java -cp C:\app\apache\axis-1_4\lib\activation.jar;C:\app\apache\axis-1_4\lib\axis-ant.jar;C:\app\apache\axis-1_4\lib\axis.jar;C:\app\apache\axis-1_4\lib\bsf.jar;C:\app\apache\axis-1_4\lib\castor-0.9.5.2.jar;C:\app\apache\axis-1_4\lib\commons-discovery-0.2.jar;C:\app\apache\axis-1_4\lib\commons-httpclient-3.0-rc2.jar;C:\app\apache\axis-1_4\lib\commons-logging-1.0.4.jar;C:\app\apache\axis-1_4\lib\commons-net-1.0.0-dev.jar;C:\app\apache\axis-1_4\lib\httpunit.jar;C:\app\apache\axis-1_4\lib\ibmjsse.jar;C:\app\apache\axis-1_4\lib\javax.jms.jar;C:\app\apache\axis-1_4\lib\jaxrpc.jar;C:\app\apache\axis-1_4\lib\JimiProClasses.jar;C:\app\apache\axis-1_4\lib\junit-3.8.1.jar;C:\app\apache\axis-1_4\lib\log4j-1.2.8.jar;C:\app\apache\axis-1_4\lib\mailapi_1_3_1.jar;C:\app\apache\axis-1_4\lib\saaj.jar;C:\app\apache\axis-1_4\lib\servlet.jar;C:\app\apache\axis-1_4\lib\wsdl4j-1.5.1.jar; org.apache.axis.wsdl.WSDL2Java https://webservices.netsuite.com/wsdl/v2017_1_0/netsuite.wsdl
+
+
+3)OOllaa...extracted java files...
+
