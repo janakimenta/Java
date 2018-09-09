@@ -1,0 +1,101 @@
+
+//Prefix WordList
+
+//given {"pizza","pi","pie","hut","hutch","hulu"}
+
+//result {"pi","hut","hulu"}
+
+
+import java.lang.*;
+import java.util.*;
+
+public class PrefixWordList
+{
+  
+  TrieNode root ;
+  List<String> result = new ArrayList<String>();
+ static class TrieNode
+ {
+   boolean isEndOfWord;
+   HashMap<Character,TrieNode> children;
+   char a;
+   
+   public TrieNode()
+   {
+    this.children =  new HashMap<Character,TrieNode>();
+    isEndOfWord = false;
+   }
+   
+ }
+   
+  public PrefixWordList()
+  {
+    root = new TrieNode();
+    }
+  
+  public void insert(String word)
+  {
+    TrieNode currentNode = root;
+    boolean breakFlag = false;
+    for(int i = 0 ;i < word.length(); i++)
+    {
+      char a = word.charAt(i);
+      if(currentNode.isEndOfWord)
+      {
+        breakFlag = true;
+        break;
+      }
+      if(currentNode.children.isEmpty() || !currentNode.children.containsKey(a))
+      {
+        TrieNode newNode = new TrieNode();
+        currentNode.children.put(a,newNode);
+      }
+      currentNode = currentNode.children.get(a);
+    }
+    if(!breakFlag)
+    {
+    currentNode.isEndOfWord = true;
+    currentNode.children.clear();
+    }
+  }
+  
+
+  
+    public void printList(String str, TrieNode root)
+  {
+    TrieNode currentNode = root;
+      if(currentNode == null || currentNode.children.isEmpty())
+        return;
+     
+    for(Map.Entry<Character,TrieNode> entrySet : currentNode.children.entrySet())
+    {   
+     // System.out.println(str);
+      str = str + entrySet.getKey();
+      currentNode = entrySet.getValue();
+      printList(str,currentNode);
+      if(currentNode.isEndOfWord)
+      {
+        System.out.println(str);
+        str = str.substring(0,str.length() - 1);
+      }
+      else
+      {
+         str = str.substring(0,str.length() - 1); // has to remember this when doing pi,phut,phulu...issue..
+      }
+    }
+  }
+  
+  public static void main(String args[])
+  {
+    PrefixWordList prefixWordListObj = new PrefixWordList();
+    prefixWordListObj.insert("pie");
+    prefixWordListObj.insert("pi");
+    prefixWordListObj.insert("pizza");
+     prefixWordListObj.insert("pie");
+    prefixWordListObj.insert("hut");
+    prefixWordListObj.insert("hutch");
+    prefixWordListObj.insert("hulu");
+    prefixWordListObj.printList("",prefixWordListObj.root);
+       
+    }
+}
