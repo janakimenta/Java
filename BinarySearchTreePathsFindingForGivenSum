@@ -1,4 +1,6 @@
-/*Given BST of integers(both negative and positive) and given a number.Find all possible paths whose sum is equal to given number.*/
+/*Given BST of integers(both negative and positive) and given a number.Find all possible paths whose sum is equal to given number.
+This has 0(nsquare)*/
+/* Solution 1 */
 import java.util.*;
 public class BinarySearchTreePathFindingForGivenSum{
     Node root;
@@ -124,3 +126,5 @@ public class BinarySearchTreePathFindingForGivenSum{
         
      }
 }
+
+/* Solution 2 */
